@@ -14,6 +14,7 @@ html, body{
   --bg-fill: #ec9f0f;
   --text: white;
   --bg-food: #17da48;
+  --bg-btn: #83aff1
 
 }
 
@@ -47,7 +48,7 @@ section{
 .blocks{
   width: 30px;
   height: 30px;
-  border: 0.5px solid gray;
+  /* border: 0.5px solid gray; */
 }
 .board{
   /* border: 1px solid var(--text); */
@@ -65,8 +66,59 @@ section{
 
 .fill{
   background-color: var(--bg-fill);
+  border-radius: 50%;
 }
 .food{
   background-color: var(--bg-food);
 }
 
+/* design the modal */
+
+.modal{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #35353587;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .start-game{
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+}
+
+.btn{
+  padding: 10px 30px;
+  font-size: 30px;
+  background-color: var(--bg-btn);
+  border-radius: 10px;
+  border: none;
+  pointer: cursor;
+  transition: all 0.3s ease;
+}
+.btn:hover{
+  transform: scale(1.1);
+
+}
+.start-game h3{
+  font-weight: bold;
+  font-size: 30px;
+}
+.game-over h3{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.modal .game-over{
+  display: flex;
+   flex-direction: column; 
+  align-items: center;
+  gap: 9px;
+  display: none;
+}
