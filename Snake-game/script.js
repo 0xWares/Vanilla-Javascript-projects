@@ -5,6 +5,8 @@ let intervalId = null;
 
 const cols = Math.floor(board.clientWidth / blockW);
 const rows = Math.floor(board.clientHeight / blockH);
+let food = {x: Math.floor(Math.random() * rows), y: Math.floor(Math.random()* cols)}
+
 
 
 const blocks = [];
@@ -23,14 +25,8 @@ for(let row = 0; row < rows; row++){
   }
 }
 function drawSnake(){
-  snakeCoordinate.forEach(activeBlocks => {
-    blocks[`${activeBlocks.x}-${activeBlocks.y}`].classList.add('fill');
-  })
-}
-
-
-intervalId = setInterval(()=>{
-  let head = null;
+let head = null;
+blocks[`${food.x}-${food.y}`].classList.add('food');
   if(direction === 'left'){
     head = {x: snakeCoordinate[0].x, y: snakeCoordinate[0].y - 1};
   }else if(direction === 'right'){
@@ -52,6 +48,19 @@ intervalId = setInterval(()=>{
   snakeCoordinate.unshift(head);
   snakeCoordinate.pop();
 
+
+
+
+
+  snakeCoordinate.forEach(activeBlocks => {
+    blocks[`${activeBlocks.x}-${activeBlocks.y}`].classList.add('fill');
+  })
+}
+
+
+intervalId = setInterval(()=>{
+  
+
   drawSnake();
 
 },400);
@@ -71,5 +80,3 @@ addEventListener('keydown', (e) => {
   
 })
 
-
-let food = {x: Math.floor(Math.random() * rows), y: Math.floor(Math.random()* cols)}
