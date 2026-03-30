@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="">
   <div class="container">
 
     <!-- Header -->
@@ -42,7 +42,7 @@
       <div class="selects">
         <div class="option-wrapper">
           <i class="fa-solid fa-cube select-icon"></i>
-          <select class="custom-select">
+          <select class="custom-select" id="model-select">
             <option value="" selected disabled>Select Model</option>
             <option value="black-forest-labs/FLUX.1-dev">FLUX.1-dev</option>
             <option value="black-forest-labs/FLUX.1-schnell">FLUX.1-schnell</option>
@@ -54,7 +54,7 @@
 
         <div class="option-wrapper">
           <i class="fa-solid fa-images select-icon"></i>
-          <select class="custom-select">
+          <select class="custom-select" id="number-select">
             <option value="" selected disabled>Number of Images</option>
             <option value="1">1 Image</option>
             <option value="2">2 Images</option>
@@ -65,7 +65,7 @@
 
         <div class="option-wrapper">
           <i class="fa-solid fa-crop-simple select-icon"></i>
-          <select class="custom-select">
+          <select class="custom-select" id="aspect-ratio-select">
             <option value="" selected disabled>Aspect Ratio</option>
             <option value="1/1">Square (1:1)</option>
             <option value="16/9">Landscape (16:9)</option>
@@ -81,35 +81,14 @@
       </div>
 
       <!-- Result gallery -->
-       <div class="gallery-grid">
-        <div class="img-card">
-          <img src="./images/img.png" alt="">
-          <div class="img-overlay">
-            <button class="img-download-btn"><i class="fa-solid fa-download"></i></button>
-          </div>
-        </div>
+       <div class="gallery-grid ">
+        
 
 
-        <div class="img-card">
-          <img src="./images/img.png" alt="">
-          <div class="img-overlay">
-            <button class="img-download-btn"><i class="fa-solid fa-download"></i></button>
-          </div>
-        </div>
-        <div class="img-card">
-          <img src="./images/img.png" alt="">
-          <div class="img-overlay">
-            <button class="img-download-btn"><i class="fa-solid fa-download"></i></button>
-          </div>
-        </div>  
+        
 
 
-        <div class="img-card">
-          <img src="./images/img.png" alt="">
-          <div class="img-overlay">
-            <button class="img-download-btn"><i class="fa-solid fa-download"></i></button>
-          </div>
-        </div>
+       
        </div>
 
       </form>
@@ -118,5 +97,7 @@
     
 
   </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
