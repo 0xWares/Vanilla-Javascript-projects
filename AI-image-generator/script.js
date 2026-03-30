@@ -6,7 +6,7 @@ const form = document.getElementById('generate-form');
 const promptInput = document.querySelector('.prompt-input'); // renamed: 'prompt' conflicts with window.prompt
 const gallery = document.querySelector('.gallery-grid');
 
-const API_KEY = "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";
+// const API_KEY = "";
 
 // ── Theme: apply saved or system preference on load ──
 (() => {
