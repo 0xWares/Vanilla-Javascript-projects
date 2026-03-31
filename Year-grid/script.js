@@ -61,7 +61,7 @@ function getQuote(){
   try{
     fetch('https://api.api-ninjas.com/v2/quotes?categories=success%2Cwisdom',{
       headers: {
-        'X-Api-Key': 'JqVXTomVU0CtpkX03FLouFnPRd1x21J5ES6bQw3D'
+        'X-Api-Key': 'JqVXTomVU0CtpkX03FLouFnPRd1x21J5ES565b1Q1w036D' // 
       }
     }).then(response => response.json()).then(data => {
       quote.innerText = `${data[0].quote} - ${data[0].author}`;
@@ -72,4 +72,4 @@ function getQuote(){
     console.log(error);
   }
 }
-getQuote();
+// getQuote();
