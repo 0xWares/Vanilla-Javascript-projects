@@ -1,11 +1,13 @@
-const dots = document.querySelector('.dots');
+const dots = document.querySelectorAll('.dots');
 const gridGallery = document.querySelector('.grid-gallery');
+const quote = document.querySelector('.quote');
+const info = document.querySelector('.info');
 let id = 1;
 const dates = [];
 
 const start = new Date(new Date().getFullYear(), 0, 1); // Jan 1
 const today = new Date();
-console.log(start);
+// console.log(start);
 
 
 for (let d = new Date(start); d <= today; d.setDate(d.getDate() + 1)) {
@@ -37,8 +39,37 @@ if(isALeap() != false){
 
 // Calculate the percentage of the year that has passed
 const percentage_passed = ((dates.length / (isALeap() ? 366 : 365)) * 100).toFixed(0);
-console.log(percentage_passed);
 
 // Day's remaining in the year
 const days_left = (isALeap() ? 366 : 365) - dates.length;
-console.log(days_left);
+info.innerText = `${days_left} Days left  |  ${percentage_passed}% passed`;
+
+// mouseover event listener for the dots
+dots.forEach(dot => {
+  dot.addEventListener('click', (e) => {
+    const hoverElementDate = dates[parseInt(e.target.id) - 1];
+    console.log(hoverElementDate);
+    
+    
+  });
+});
+
+
+//Motivational quote of the day
+
+function getQuote(){
+  try{
+    fetch('https://api.api-ninjas.com/v2/quotes?categories=success%2Cwisdom',{
+      headers: {
+        'X-Api-Key': 'JqVXTomVU0CtpkX03FLouFnPRd1x21J5ES6bQw3D'
+      }
+    }).then(response => response.json()).then(data => {
+      quote.innerText = `${data[0].quote} - ${data[0].author}`;
+    }
+    )
+
+  }catch(error){
+    console.log(error);
+  }
+}
+getQuote();
