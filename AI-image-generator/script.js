@@ -27,7 +27,7 @@ function toggleTheme() {
     : '<i class="fas fa-moon"></i>';
 }
 
-// ── Get width/height from aspect ratio string e.g. "16/9" ──
+
 function getImageDimensions(aspectRatio, baseSize = 512) {
   const [w, h] = aspectRatio.split('/').map(Number); // FIX: was .spit()
   const scaleFactor = baseSize / Math.sqrt(w * h);

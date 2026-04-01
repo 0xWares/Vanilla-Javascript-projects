@@ -1,0 +1,137 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+:root {
+  --bg:           #f4f3ff;
+  --surface:      #ffffff;
+  --surface-2:    #ede9fe;
+  --border:       rgba(0, 0, 0, 0.08);
+  --border-focus: rgba(109, 40, 217, 0.45);
+  --accent:       #7c3aed;
+  --accent-alt:   #6d28d9;
+  --accent-glow:  rgba(124, 58, 237, 0.25);
+  --text:         #1a1825;
+  --text-muted:   #5b5870;
+  --text-faint:   #b0adc8;
+  --radius-lg:    16px;
+  --radius-md:    10px;
+  --radius-sm:    7px;
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+
+
+}
+
+body.dark-theme{
+  --bg:           #0c0c10;
+  --surface:      #13131a;
+  --surface-2:    #1c1c27;
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-focus: rgba(139, 92, 246, 0.5);
+  --accent:       #8b5cf6;
+  --accent-alt:   #a78bfa;
+  --accent-glow:  rgba(139, 92, 246, 0.35);
+  --text:         #ececf1;
+  --text-muted:   #7b7a90;
+  --text-faint:   #3e3d52;
+  --radius-lg:    16px;
+  --radius-md:    10px;
+  --radius-sm:    7px;
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body{
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container{
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 90%;
+}
+.quote-display{
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  min-height: 100px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.quote-input{
+  min-width: 85%;
+  min-height: 150px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: var(--text);
+  background-color: var(--surface-2);
+  resize: none;
+  transition: border-color 0.3s var(--ease);
+}
+.quate-input:focus{
+  outline: none;
+  border-color: var(--border-focus);
+}
+
+.correct{
+  color: green;
+  background-color: var(--accent-glow);
+  padding: 0.1rem;
+  border-radius: var(--radius-sm);
+  
+
+}
+.incorrect{
+  color: red;
+  text-decoration: underline;
+  background-color: var(--accent-glow);
+  padding: 0.1rem;
+  border-radius: var(--radius-sm);
+}
+
+.bottombtns{
+ 
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.info div{
+  font-weight: bold;
+  font-size: 20px;
+}
+.btmflex{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
