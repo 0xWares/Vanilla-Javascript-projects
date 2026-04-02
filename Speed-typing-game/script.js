@@ -27,7 +27,11 @@ quoteInputElement.addEventListener('input', () => {
 			arrayQuote[indx].classList.add('incorrect');
 			correct = false;
 		}})
-		if(correct) showQuote();
+		if(correct) {
+			showQuote();
+			wpmElement.innerHTML = `0 WPM`;
+			return;
+		};
 
 		wpm(arrayInput.length)
 
