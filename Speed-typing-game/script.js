@@ -6,10 +6,13 @@ const themeToggler = document.querySelector('.theme-toggler');
 const body = document.querySelector('body');
 const wpmElement = document.querySelector('.wpm');
 const recordContainer = document.querySelector('#recordContainer');
+const trash = document.querySelector('.trash');
+
 
 let quotes;
-const wpms = [];
+let wpms = [];
 let wpmRecordIndex = 0;
+
 
 quoteInputElement.addEventListener('input', () => {
 	let correct = false;
@@ -33,6 +36,17 @@ quoteInputElement.addEventListener('input', () => {
 		}})
 		if(correct) {
 			showQuote();
+			
+			historyStack();
+			
+			wpmElement.innerHTML = `0 WPM`;
+			return;
+		};
+		wpm(arrayInput.length)
+
+});
+function historyStack(){
+
 			const p1 = document.createElement('p')
 			wpms.push(wpmElement.innerText)
 			console.log(wpms);
@@ -55,17 +69,7 @@ quoteInputElement.addEventListener('input', () => {
 			stackDiv.appendChild(wpmRecordDiv);
 
 			recordContainer.appendChild(stackDiv);
-
-			
-			wpmElement.innerHTML = `0 WPM`;
-			return;
-		};
-
-
-
-		wpm(arrayInput.length)
-
-});
+}
 
 function getQuote(){
 		return fetch('https://dummyjson.com/quotes')
