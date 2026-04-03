@@ -5,7 +5,11 @@ const timerElement = document.getElementById('timer');
 const themeToggler = document.querySelector('.theme-toggler');
 const body = document.querySelector('body');
 const wpmElement = document.querySelector('.wpm');
+const recordContainer = document.querySelector('#recordContainer');
+
 let quotes;
+const wpms = [];
+let wpmRecordIndex = 0;
 
 quoteInputElement.addEventListener('input', () => {
 	let correct = false;
@@ -29,9 +33,35 @@ quoteInputElement.addEventListener('input', () => {
 		}})
 		if(correct) {
 			showQuote();
+			const p1 = document.createElement('p')
+			wpms.push(wpmElement.innerText)
+			console.log(wpms);
+			p1.innerText = wpms[wpmRecordIndex];
+			wpmRecordIndex++;
+			const p2 = document.createElement('p');
+			p2.innerText = wpmRecordIndex;
+
+			
+
+			const indexDiv = document.createElement('div');
+			const wpmRecordDiv = document.createElement('div');
+			const stackDiv = document.createElement('div');
+			indexDiv.setAttribute('class', 'index');
+			wpmRecordDiv.setAttribute('class', 'wpm-record');
+			stackDiv.setAttribute('class', 'stack');
+			indexDiv.appendChild(p2);
+			wpmRecordDiv.appendChild(p1);
+			stackDiv.appendChild(indexDiv);
+			stackDiv.appendChild(wpmRecordDiv);
+
+			recordContainer.appendChild(stackDiv);
+
+			
 			wpmElement.innerHTML = `0 WPM`;
 			return;
 		};
+
+
 
 		wpm(arrayInput.length)
 
